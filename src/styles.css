@@ -1,1 +1,199 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*Pokedex Component*/
+.pokeball{
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: -20px;
+    right: -15px;
+    color: #e4e5e2;
+    z-index: -1;
+}
+
+#title-pokedex{
+    font-size: 50px;
+}
+
+
+#container-pokemons{
+    height: 70vh; 
+    overflow-y: scroll;
+    padding:10px;
+    margin-top: 20px;
+}
+
+.card-pokemons{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20%;
+    background-color: rgb(221 219 198);
+    flex-direction: unset!important;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    border-radius: 3.25rem!important;
+}
+
+
+.spinner-border{
+    border: unset!important;
+}
+
+.logo-loading{
+    width: 50px;
+}
+
+.card:hover{
+    transition: all 1s;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.card-image-pokemon{
+    justify-content: center;
+    align-items: center;
+    padding-left: 3.5rem;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    z-index: 10;
+}
+.card-image-pokemon h2{
+    color:#fff
+}
+.background-pokeball{
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    color: #fff;
+    height: 130px;
+    z-index: 1;
+}
+
+.card-info-pokemon{
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.card-info-pokemon h2{
+    border-radius: 40px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+}
+
+.card-info-pokemon p,
+.card-info-pokemon span{
+    border-radius: 40px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.card-info-pokemon span{
+    min-width: 25px;
+    background: rgb(0 0 0 / 46%)
+}
+
+.card-body{
+    border-radius: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif!important;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000
+}
+
+
+/*Pokemon Component*/
+
+.progress-bar-stats{
+    background:#0d6efd;
+    color:white;
+    border-radius: 2px;
+}
+
+.text-abilities{
+    text-transform: capitalize;
+}
+
+#pokemon-detail-info h1{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.mat-dialog-container{
+    box-sizing: content-box!important;
+}
+
+/*Background color card*/
+.card-grass{
+    background-color: rgb(113 192 52)!important;
+}
+
+.card-fire{
+    background-color: rgb(212, 43, 31)!important;
+}
+.card-water{
+    background-color: rgb(91, 166, 210)!important;
+}
+
+.card-bug{
+    background-color: rgb(189, 221, 110)!important;
+}
+.card-normal{
+    background-color: rgb(221 219 198)!important;
+}
+.card-electric{
+    background-color: rgb(247 203 84)!important;
+}
+.card-ground{
+    background-color: rgb(211 178 86)!important;
+}
+.card-poison{
+    background-color: rgb(141 67 142)!important;
+}
+.card-fairy{
+    background-color: rgb(240 177 244)!important;
+}
+.card-ice{
+    background-color: rgb(111 210 242)!important;
+}
+.card-fighting{
+    background-color: rgb(130 52 28)!important;
+}
+.card-rock{
+    background-color: rgb(159 135 63)!important;
+}
+.card-psychic{
+    background-color: rgb(232 73 127)!important;
+}
+.card-dragon{
+    background-color: rgb(116 93 217)!important;
+}
+.card-dark{
+    background-color: rgb(74 55 43)!important;
+}
+.card-ghost{
+    background-color: rgb(94 96 170)!important;
+}
+.card-steel{
+    background-color: rgb(166 166 182)!important;
+}
+.card-flying{
+    background-color: rgb(135 152 229)!important;
+}
+.card-missingno{
+    background-color: gray!important;
+}
+.card-missingno img{
+    width: 96px;
+}
+.card-missingno:hover{
+    transition: unset;
+    cursor: unset;
+    transform: unset;
+}

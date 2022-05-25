@@ -1,0 +1,100 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12 col-lg-3 col-xl-3">
+            <h1 id="title-pokedex">Pokedex</h1>
+        </div>
+        <div class="form-group col-md-12 col-lg-9 col-xl-9">
+            <form class="form-search" #formSearchPokemon (ngSubmit)="onSearchPokemon(formSearchPokemon)">
+                <div class="row">
+                    <label for="search">Pokemon name or number</label>
+                    <div class="col-md-7 mb-3">
+                        
+                        <input type="text" placeholder="Greninja or 658" class="form-control"  name="search" #search="ngModel" [(ngModel)]="pokeSearch">
+                    </div>
+                    <div class="col-md-4 ">
+                        <input type="submit" value="Search Pokemon" class="btn-primary btn">
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+    <section class="">
+        <div class="d-flex justify-content-center mt-3">
+            <div *ngIf="loading"  class="spinner-border loading-pokeball"  role="status">
+                <img src="../../../assets/img/pokeball.png" class="logo-loading">
+                
+            </div>
+            
+        </div>
+
+        <div *ngIf="!isSearching"  id="container-pokemons" class="row"  (scroll)="onScroll($event)">
+            <div *ngFor="let pokemon of pokemons" class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4" (click)="onDetail(pokemon)" >
+                <div  class="card card-pokemons  {{'card-'+getPrincipalType(pokemon.types)}}" >
+                    <img src="../../../assets/img/pokeball-background-white.png" class="background-pokeball">
+                    
+                    <div class="card-image-pokemon">
+                        <h2 class="color-white">#{{pokemon['id']}}</h2>
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" class="" alt="...">
+                    </div>
+                    <div class="card-info-pokemon">
+                        
+                        <h1 class="color-white">{{pokemon['name']}}</h1>
+                        <span class="color-white {{'bg-color-' + getPrincipalType(pokemon.types)}}" *ngFor="let type of pokemon.types">{{type.type.name}}</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="isSearching && !loading && !missingno"  id="container-pokemons" class="row"  (scroll)="onScroll($event)">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 " (click)="onDetail(searchPokemon)">
+                <div  class="card card-pokemons  {{'card-'+getPrincipalType(searchPokemon.types)}}" >
+                    <img src="../../../assets/img/pokeball-background-white.png" class="background-pokeball">
+                    
+                    <div class="card-image-pokemon">
+                        <h2 class="color-white"># {{searchPokemon.id}}</h2>
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{searchPokemon.id}}.png" class="" alt="...">
+                    </div>
+                    <div class="card-info-pokemon">
+                        
+                        <h1 class="color-white">{{searchPokemon.name}}</h1>
+                        <span class="color-white {{'bg-color-' + getPrincipalType(searchPokemon.types)}}" *ngFor="let type of searchPokemon.types">{{type.type.name}}</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="isSearching && !loading && missingno"  id="container-pokemons" class="row"  (scroll)="onScroll($event)">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 " >
+                <div  class="card card-pokemons card-missingno" >
+                    <img src="../../../assets/img/pokeball-background.png" class="background-pokeball">
+                    
+                    <div class="card-image-pokemon">
+                        <h2 class=""># Missingno</h2>
+                        <img src="../../../assets/img/missingno.png" class="" alt="missingno">
+                    </div>
+                    <div class="card-info-pokemon">
+                        <h1 class="">Missingno</h1>
+                        <span class="">Missingno</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+      
+
+</div>
+
+
+
+
+

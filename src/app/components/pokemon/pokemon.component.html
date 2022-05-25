@@ -1,0 +1,49 @@
+
+
+<div id="pokemon-detail-info" class="text-center">
+    <h1>{{pokemon.name}}</h1>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" class="" alt="...">
+</div>
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="true">Info</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="stats-tab" data-bs-toggle="tab"  data-bs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="false">Base stats</button>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active p-2" id="info" role="tabpanel" aria-labelledby="info-tab">
+        <h3 class=""><strong>Height: </strong>{{height}} m.</h3>
+        <h3 class=""><strong>Weight: </strong>{{weight}} kg.</h3>
+        <h3 class="text-abilities"><strong>Abilities: </strong>{{getAbilities()}}</h3>
+    </div>
+    <div class="tab-pane fade p-2" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+        <strong class="mt-2">HP:</strong>
+        <div class="mb-2">
+            <div class="text-center progress-bar-stats" [style.width.%]="stats[0]"  id="hp">{{pokemon.stats[0].base_stat}}</div>
+        </div>
+        <strong>Attack:</strong>
+        <div class="mb-2">
+            <div class="text-center progress-bar-stats" [style.width.%]="stats[1]"  id="hp">{{pokemon.stats[1].base_stat}}</div>
+        </div>
+        <strong>Defense:</strong>
+        <div class="mb-2">
+            <div class="text-center progress-bar-stats" [style.width.%]="stats[2]"  id="hp">{{pokemon.stats[2].base_stat}}</div>
+        </div>
+        <strong>Sp Atack:</strong>
+        <div class="mb-2">
+            <div class="text-center progress-bar-stats" [style.width.%]="stats[3]"  id="hp">{{pokemon.stats[3].base_stat}}</div>
+        </div>
+        <strong>Sp Defense:</strong>
+        <div class="mb-2">
+            <div class="text-center progress-bar-stats" [style.width.%]="stats[4]"  id="hp">{{pokemon.stats[4].base_stat}}</div>
+        </div>
+        <strong>Speed:</strong>
+        <div class="mb-2">
+            <div class="text-center progress-bar-stats" [style.width.%]="stats[5]"  id="hp">{{pokemon.stats[5].base_stat}}</div>
+        </div>
+    </div>
+</div>
