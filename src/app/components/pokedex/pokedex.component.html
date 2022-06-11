@@ -24,7 +24,7 @@
     <section class="">
         <div class="d-flex justify-content-center mt-3">
             <div *ngIf="loading"  class="spinner-border loading-pokeball"  role="status">
-                <img src="../../../assets/img/pokeball.png" class="logo-loading">
+                <img src="assets/img/pokeball.png" class="logo-loading">
                 
             </div>
             
@@ -33,7 +33,7 @@
         <div *ngIf="!isSearching"  id="container-pokemons" class="row"  (scroll)="onScroll($event)">
             <div *ngFor="let pokemon of pokemons" class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4" (click)="onDetail(pokemon)" >
                 <div  class="card card-pokemons  {{'card-'+getPrincipalType(pokemon.types)}}" >
-                    <img src="../../../assets/img/pokeball-background-white.png" class="background-pokeball">
+                    <img src="assets/img/pokeball-background-white.png" class="background-pokeball">
                     
                     <div class="card-image-pokemon">
                         <h2 class="color-white">#{{pokemon['id']}}</h2>
@@ -52,7 +52,7 @@
         <div *ngIf="isSearching && !loading && !missingno"  id="container-pokemons" class="row"  (scroll)="onScroll($event)">
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 " (click)="onDetail(searchPokemon)">
                 <div  class="card card-pokemons  {{'card-'+getPrincipalType(searchPokemon.types)}}" >
-                    <img src="../../../assets/img/pokeball-background-white.png" class="background-pokeball">
+                    <img src="assets/img/pokeball-background-white.png" class="background-pokeball">
                     
                     <div class="card-image-pokemon">
                         <h2 class="color-white"># {{searchPokemon.id}}</h2>
@@ -71,11 +71,11 @@
         <div *ngIf="isSearching && !loading && missingno"  id="container-pokemons" class="row"  (scroll)="onScroll($event)">
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 " >
                 <div  class="card card-pokemons card-missingno" >
-                    <img src="../../../assets/img/pokeball-background.png" class="background-pokeball">
+                    <img src="assets/img/pokeball-background.png" class="background-pokeball">
                     
                     <div class="card-image-pokemon">
                         <h2 class=""># Missingno</h2>
-                        <img src="../../../assets/img/missingno.png" class="" alt="missingno">
+                        <img src="assets/img/missingno.png" class="" alt="missingno">
                     </div>
                     <div class="card-info-pokemon">
                         <h1 class="">Missingno</h1>
